@@ -56,9 +56,10 @@ function handleProfileFormSubmit(evt) {
 
 // Функция добавления карточки из формы
 function handleCardFormSubmit(evt) {
+  evt.preventDefault();
+
   const card = { name: cardNameInput.value, link: cardLinkInput.value };
 
-  evt.preventDefault();
   cardList.prepend(createCard(card, deleteCard, openImagePopup, likeCard));
   closeModal(cardAddPopup);
   cardForm.reset();
