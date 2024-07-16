@@ -107,10 +107,10 @@ function handleProfileFormSubmit(evt) {
 // Функция редактирования аватара
 function handleAvatarFormSubmit(evt) {
   evt.preventDefault();
-  renderLoading(true, avatarSubmitButton);
 
   checkImageLinkRequest(avatarLinkInput.value)
     .then(() => {
+      renderLoading(true, avatarSubmitButton);
       patchAvatarRequest(avatarLinkInput.value)
         .then((dataAvatar) => {
           profileImage.style.backgroundImage = `url(${dataAvatar.avatar})`;
