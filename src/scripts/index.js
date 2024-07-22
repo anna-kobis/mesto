@@ -222,7 +222,7 @@ closeButtons.forEach((button) => {
 
 // По клику на оверлей
 popups.forEach((popup) => {
-  popup.addEventListener("click", closeModalByOverlay);
+  popup.addEventListener("mousedown", closeModalByOverlay);
 });
 
 // Слушатель редактирования профиля
