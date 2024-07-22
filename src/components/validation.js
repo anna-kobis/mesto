@@ -1,17 +1,3 @@
-/*
-
-// Объект настроек валидации
-const validationConfig = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-};
-
-*/
-
 // Функция показа сообщения об ошибке
 function showInputError(
   formElement,
@@ -62,11 +48,16 @@ function hasInvalidInput(inputList) {
   });
 }
 
+//Функция блокировки кнопки
+function disableButton(buttonElement, validationConfig) {
+  buttonElement.disabled = true;
+  buttonElement.classList.add(validationConfig.inactiveButtonClass);
+}
+
 // Функция переключения доступности кнопки в зависимости от валидности инпутов
 function toggleButtonState(inputList, buttonElement, validationConfig) {
   if (hasInvalidInput(inputList)) {
-    buttonElement.disabled = true;
-    buttonElement.classList.add(validationConfig.inactiveButtonClass);
+    disableButton(buttonElement, validationConfig);
   } else {
     buttonElement.disabled = false;
     buttonElement.classList.remove(validationConfig.inactiveButtonClass);
@@ -121,4 +112,4 @@ function enableValidation(validationConfig) {
   );
 }
 
-export { showInputError, clearValidation, enableValidation };
+export { showInputError, disableButton, clearValidation, enableValidation };

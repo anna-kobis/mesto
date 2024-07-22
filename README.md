@@ -1,11 +1,7 @@
 # Проектная работа Mesto
 <p align="center">
-    <a href="https://github.com/anna-kobis/mesto-project-ff.git" alt="Mesto">
-      <img src="https://img.shields.io/badge/GitHub-black?style=flat&logo=github" />
-    </a>
-    <a href="https://anna-kobis.github.io/mesto-project-ff/" alt="Mesto">
-        <img src="https://img.shields.io/badge/GitHub%20Pages-black?style=flat&logo=github" />
-    </a>
+    <a href="https://github.com/anna-kobis/mesto-project-ff.git" alt="Mesto"><img src="https://img.shields.io/badge/GitHub-black?style=flat&logo=github" /></a>
+    <a href="https://anna-kobis.github.io/mesto-project-ff/" alt="Mesto"><img src="https://img.shields.io/badge/GitHub%20Pages-black?style=flat&logo=github" /></a>
 </p>
 
 Учебный проект представляет собой приложение - интерактивную страницу, где можно делиться изображениями с другими пользователями.

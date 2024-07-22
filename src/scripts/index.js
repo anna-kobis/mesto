@@ -7,6 +7,7 @@ import {
 } from "../components/modal.js";
 import {
   showInputError,
+  disableButton,
   clearValidation,
   enableValidation,
 } from "../components/validation.js";
@@ -29,7 +30,7 @@ const profileEditButton = document.querySelector(".profile__edit-button");
 
 // Карточки
 const cardAddButton = document.querySelector(".profile__add-button");
-const cardList = document.querySelector(".places__list");
+const cardsContainer = document.querySelector(".places__list");
 
 // Модальные окна
 const popups = document.querySelectorAll(".popup");
@@ -121,8 +122,7 @@ function handleAvatarFormSubmit(evt) {
     })
     .catch((error) => {
       showInputError(avatarForm, avatarLinkInput, error, validationConfig);
-      avatarSubmitButton.disabled = true;
-      avatarSubmitButton.classList.add(validationConfig.inactiveButtonClass);
+      disableButton(avatarSubmitButton, validationConfig);
     });
 }
 
@@ -133,7 +133,7 @@ function handleCardFormSubmit(evt) {
 
   postCardRequest(cardNameInput.value, cardLinkInput.value)
     .then((dataCard) => {
-      cardList.prepend(
+      cardsContainer.prepend(
         createCard(dataCard, openDeletePopup, openImagePopup, likeCard, myId)
       );
       closeModal(cardAddPopup);
@@ -144,10 +144,10 @@ function handleCardFormSubmit(evt) {
 }
 
 // Функция открытия картинки карточки
-function openImagePopup(evt) {
-  cardViewPopupImage.src = evt.target.src;
-  cardViewPopupImage.alt = evt.target.alt;
-  cardViewPopupCaption.textContent = evt.target.alt;
+function openImagePopup(dataCard) {
+  cardViewPopupImage.src = dataCard.link;
+  cardViewPopupImage.alt = dataCard.name;
+  cardViewPopupCaption.textContent = dataCard.name;
   openModal(cardViewPopup);
 }
 
@@ -179,7 +179,7 @@ Promise.all([getMyInfoRequest(), getСardsRequest()])
     myId = me._id;
 
     dataCards.forEach((dataCard) => {
-      cardList.append(
+      cardsContainer.append(
         createCard(dataCard, openDeletePopup, openImagePopup, likeCard, myId)
       );
     });
@@ -200,7 +200,7 @@ profileEditButton.addEventListener("click", () => {
 
 // Окно редактирования аватара
 profileImage.addEventListener("click", () => {
-  avatarLinkInput.value = profileImage.style.backgroundImage.slice(5, -2);
+  avatarForm.reset();
   clearValidation(avatarForm, validationConfig);
   openModal(avatarEditPopup);
 });

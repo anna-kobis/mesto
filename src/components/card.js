@@ -31,7 +31,7 @@ function createCard(dataCard, openDeletePopup, openImagePopup, likeCard, myId) {
     cardDeleteButton.remove();
   }
 
-  cardImage.addEventListener("click", openImagePopup);
+  cardImage.addEventListener("click", () => openImagePopup(dataCard));
 
   cardLikeButton.addEventListener("click", () =>
     likeCard(dataCard, cardLikeButton, cardLikeCount, myId)
