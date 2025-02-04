@@ -4,8 +4,7 @@
 
 Проект разработан для освоения ключевых концепций JavaScript, таких как типы данных, условия, циклы и функции, работа с DOM и обработка событий. В процессе разработки реализовано взаимодействие с сервером методами API, валидация форм с использованием регулярных выражений, а также модульная структура проекта с применением сборщика Webpack.
 
-[Сайт на github-pages](https://anna-kobis.github.io/mesto/)
-Макеты в Figma: [Лейаут и ui-kit](https://www.figma.com/design/bjyvbKKJN2naO0ucURl2Z0/) | [Валидация форм](https://www.figma.com/design/kRVLKwYG3d1HGLvh7JFWRT/) | [Лайки и модальные окна](https://www.figma.com/design/PSdQFRHoxXJFs2FH8IXViF/)
+[Сайт на github-pages](https://anna-kobis.github.io/mesto/) | Макеты в Figma: [Лейаут и ui-kit](https://www.figma.com/design/bjyvbKKJN2naO0ucURl2Z0/) | [Валидация форм](https://www.figma.com/design/kRVLKwYG3d1HGLvh7JFWRT/) | [Лайки и модальные окна](https://www.figma.com/design/PSdQFRHoxXJFs2FH8IXViF/)
 
 ![Скриншот сайта "Mesto"](./docs/page.png)
 
@@ -59,10 +58,11 @@ npm run build
 
 Собранные файлы будут помещены в папку `dist`.
 
-5. Для деплоя проекта на GitHub Pages выполните команду:
+5. Для деплоя проекта на GitHub Pages можно выполнить команду:
 
 ```bash
 npm run deploy
 ```
 
 Эта команда автоматически соберет проект и опубликует его на GitHub Pages.
+Примечание: перед использованием команды убедитесь, что у вас создан удаленный репозиторий на вашем аккаунте GitHub и что он связан с вашим локальным репозиторием.
